@@ -14,6 +14,7 @@ import backendtest.api.dto.BusinessFlagDTO;
 import backendtest.api.dto.LocationDTO;
 import backendtest.api.entity.Business.Businesses;
 import backendtest.api.entity.Business.PriceRange;
+import ch.qos.logback.core.joran.util.beans.BeanUtil;
 
 @Service(ConverterBusinessToBusinessDTO.CONVERTER)
 public class ConverterBusinessToBusinessDTO implements Converter<List<Businesses>, List<BusinessDTO>>{
@@ -40,12 +41,12 @@ public class ConverterBusinessToBusinessDTO implements Converter<List<Businesses
             }
             if(item.getLocation() != null) {
                 LocationDTO location = new LocationDTO();
-                BeanUtils.copyProperties(item, location);
+                BeanUtils.copyProperties(item.getLocation(), location);
                 business.setLocation(location);
             }
             if(item.getBusinessFlag() != null) {
                 BusinessFlagDTO flag = new BusinessFlagDTO();
-                BeanUtils.copyProperties(item, flag);
+                BeanUtils.copyProperties(item.getBusinessFlag(), flag);
                 business.setFlag(flag);
             }
             businesses.add(business);

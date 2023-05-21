@@ -1,11 +1,12 @@
 package backendtest.api.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class BusinessFlagDTO {
+    String id;
     boolean hotAndNew;
     boolean requestAQUote;
     boolean reservation;
@@ -19,7 +20,6 @@ public class BusinessFlagDTO {
     boolean parkingGarage;
     boolean parkingLot;
     boolean parkingStreet;
-    boolean parkingValet;
     boolean parkingValidated;
     boolean parkingBike;
     boolean restaurantsDelivery;

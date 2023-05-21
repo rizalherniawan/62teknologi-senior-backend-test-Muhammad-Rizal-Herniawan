@@ -30,7 +30,7 @@ public class Locations extends BaseEntity{
     private String address;
 
     @Column(name = "country_code")
-    private String countryCode;
+    private Integer countryCode;
 
     @Column(name = "language_code")
     private String languageCode;
