@@ -1,6 +1,7 @@
 package backendtest.api.entity.Locations;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -41,7 +42,7 @@ public class Locations extends BaseEntity{
     @Column(name = "radius")
     private Integer radius;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     @JoinColumn(name = "business_id", referencedColumnName = "id")
     private Businesses business;

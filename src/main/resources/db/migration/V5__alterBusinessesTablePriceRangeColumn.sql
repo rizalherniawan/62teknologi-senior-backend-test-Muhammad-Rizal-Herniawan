@@ -1,0 +1,1 @@
+alter table businesses modify column price_range enum("CHEAP","MEDIUM","EXPENSIVE","VERY_EXPENSIVE") default null;

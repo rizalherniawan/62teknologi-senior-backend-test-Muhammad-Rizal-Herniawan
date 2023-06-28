@@ -6,6 +6,8 @@ import java.time.LocalTime;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -33,6 +35,7 @@ public class Businesses extends BaseEntity {
     private LocalTime closedAt;
 
     @Column(name = "price_range")
+    @Enumerated(EnumType.STRING)
     private PriceRange priceRange;
 
     @OneToOne(mappedBy = "business", cascade = CascadeType.ALL)

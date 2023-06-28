@@ -1,0 +1,1 @@
+alter table businesses modify column price_range varchar(255);

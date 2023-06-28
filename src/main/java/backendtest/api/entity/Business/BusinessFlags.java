@@ -1,6 +1,7 @@
 package backendtest.api.entity.Business;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -76,7 +77,7 @@ public class BusinessFlags extends BaseEntity{
     @Column(name = "wifi_paid")
     private boolean wifiPaid;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     @JoinColumn(name = "business_id", referencedColumnName = "id")
     private Businesses business;
